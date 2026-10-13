@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="none">
+  <title>Leadership Avatar Placeholder</title>
+  <!-- Background circular disc in stone -->
+  <circle cx="80" cy="80" r="76" fill="#F3F1EA" stroke="#E2DFD4" stroke-width="2"/>
+  <!-- Concentric inner highlight circle -->
+  <circle cx="80" cy="80" r="70" fill="#FBFAF7"/>
+  <!-- Abstract Head silhouette in bronze-tint with subtle navy border -->
+  <circle cx="80" cy="58" r="26" fill="#F6EFE0" stroke="#1C3556" stroke-width="2.2"/>
+  <!-- Abstract Shoulders/Torso arch -->
+  <path d="M38 132 C38 104 56 94 80 94 C104 94 122 104 122 132" fill="#F6EFE0" stroke="#1C3556" stroke-width="2.2" stroke-linecap="round"/>
+  <!-- Bronze node accent -->
+  <circle cx="80" cy="94" r="3" fill="#C1A066"/>
+</svg>

@@ -1,0 +1,272 @@
+{
+  "hero-supply-route": {
+    "aspect_ratio": 0.4308,
+    "original_size": [
+      1300,
+      560
+    ],
+    "variants": {
+      "480": {
+        "width": 480,
+        "height": 207,
+        "files": {
+          "avif": {
+            "file": "hero-supply-route-480w.avif",
+            "bytes": 6422
+          },
+          "webp": {
+            "file": "hero-supply-route-480w.webp",
+            "bytes": 8010
+          },
+          "jpeg": {
+            "file": "hero-supply-route-480w.jpg",
+            "bytes": 12633
+          }
+        }
+      },
+      "800": {
+        "width": 800,
+        "height": 345,
+        "files": {
+          "avif": {
+            "file": "hero-supply-route-800w.avif",
+            "bytes": 12932
+          },
+          "webp": {
+            "file": "hero-supply-route-800w.webp",
+            "bytes": 17456
+          },
+          "jpeg": {
+            "file": "hero-supply-route-800w.jpg",
+            "bytes": 30015
+          }
+        }
+      },
+      "1200": {
+        "width": 1200,
+        "height": 517,
+        "files": {
+          "avif": {
+            "file": "hero-supply-route-1200w.avif",
+            "bytes": 19470
+          },
+          "webp": {
+            "file": "hero-supply-route-1200w.webp",
+            "bytes": 29276
+          },
+          "jpeg": {
+            "file": "hero-supply-route-1200w.jpg",
+            "bytes": 54449
+          }
+        }
+      },
+      "1300": {
+        "width": 1300,
+        "height": 560,
+        "files": {
+          "avif": {
+            "file": "hero-supply-route-1300w.avif",
+            "bytes": 21416
+          },
+          "webp": {
+            "file": "hero-supply-route-1300w.webp",
+            "bytes": 32816
+          },
+          "jpeg": {
+            "file": "hero-supply-route-1300w.jpg",
+            "bytes": 61466
+          }
+        }
+      }
+    }
+  },
+  "commodity-rare-earths": {
+    "aspect_ratio": 0.7467,
+    "original_size": [
+      1200,
+      896
+    ],
+    "variants": {
+      "480": {
+        "width": 480,
+        "height": 358,
+        "files": {
+          "avif": {
+            "file": "commodity-rare-earths-480w.avif",
+            "bytes": 4511
+          },
+          "webp": {
+            "file": "commodity-rare-earths-480w.webp",
+            "bytes": 7164
+          },
+          "jpeg": {
+            "file": "commodity-rare-earths-480w.jpg",
+            "bytes": 12728
+          }
+        }
+      },
+      "800": {
+        "width": 800,
+        "height": 597,
+        "files": {
+          "avif": {
+            "file": "commodity-rare-earths-800w.avif",
+            "bytes": 7388
+          },
+          "webp": {
+            "file": "commodity-rare-earths-800w.webp",
+            "bytes": 13896
+          },
+          "jpeg": {
+            "file": "commodity-rare-earths-800w.jpg",
+            "bytes": 26828
+          }
+        }
+      },
+      "1200": {
+        "width": 1200,
+        "height": 896,
+        "files": {
+          "avif": {
+            "file": "commodity-rare-earths-1200w.avif",
+            "bytes": 12211
+          },
+          "webp": {
+            "file": "commodity-rare-earths-1200w.webp",
+            "bytes": 24148
+          },
+          "jpeg": {
+            "file": "commodity-rare-earths-1200w.jpg",
+            "bytes": 48616
+          }
+        }
+      }
+    }
+  },
+  "commodity-crude-oil": {
+    "aspect_ratio": 0.7467,
+    "original_size": [
+      1200,
+      896
+    ],
+    "variants": {
+      "480": {
+        "width": 480,
+        "height": 358,
+        "files": {
+          "avif": {
+            "file": "commodity-crude-oil-480w.avif",
+            "bytes": 5898
+          },
+          "webp": {
+            "file": "commodity-crude-oil-480w.webp",
+            "bytes": 8060
+          },
+          "jpeg": {
+            "file": "commodity-crude-oil-480w.jpg",
+            "bytes": 14840
+          }
+        }
+      },
+      "800": {
+        "width": 800,
+        "height": 597,
+        "files": {
+          "avif": {
+            "file": "commodity-crude-oil-800w.avif",
+            "bytes": 11247
+          },
+          "webp": {
+            "file": "commodity-crude-oil-800w.webp",
+            "bytes": 17080
+          },
+          "jpeg": {
+            "file": "commodity-crude-oil-800w.jpg",
+            "bytes": 34142
+          }
+        }
+      },
+      "1200": {
+        "width": 1200,
+        "height": 896,
+        "files": {
+          "avif": {
+            "file": "commodity-crude-oil-1200w.avif",
+            "bytes": 17963
+          },
+          "webp": {
+            "file": "commodity-crude-oil-1200w.webp",
+            "bytes": 28378
+          },
+          "jpeg": {
+            "file": "commodity-crude-oil-1200w.jpg",
+            "bytes": 63058
+          }
+        }
+      }
+    }
+  },
+  "commodity-gems": {
+    "aspect_ratio": 0.7467,
+    "original_size": [
+      1200,
+      896
+    ],
+    "variants": {
+      "480": {
+        "width": 480,
+        "height": 358,
+        "files": {
+          "avif": {
+            "file": "commodity-gems-480w.avif",
+            "bytes": 4996
+          },
+          "webp": {
+            "file": "commodity-gems-480w.webp",
+            "bytes": 6820
+          },
+          "jpeg": {
+            "file": "commodity-gems-480w.jpg",
+            "bytes": 12866
+          }
+        }
+      },
+      "800": {
+        "width": 800,
+        "height": 597,
+        "files": {
+          "avif": {
+            "file": "commodity-gems-800w.avif",
+            "bytes": 8402
+          },
+          "webp": {
+            "file": "commodity-gems-800w.webp",
+            "bytes": 12990
+          },
+          "jpeg": {
+            "file": "commodity-gems-800w.jpg",
+            "bytes": 27541
+          }
+        }
+      },
+      "1200": {
+        "width": 1200,
+        "height": 896,
+        "files": {
+          "avif": {
+            "file": "commodity-gems-1200w.avif",
+            "bytes": 13102
+          },
+          "webp": {
+            "file": "commodity-gems-1200w.webp",
+            "bytes": 21442
+          },
+          "jpeg": {
+            "file": "commodity-gems-1200w.jpg",
+            "bytes": 49758
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,195 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+  <symbol id="alert" viewBox="0 0 24 24">
+<path d="M12 3L21 19H3L12 3Z"/>
+<path d="M12 9V14"/>
+<circle cx="12" cy="16.5" r="0.75" fill="currentColor"/>
+  </symbol>
+  <symbol id="arrow-right" viewBox="0 0 24 24">
+<path d="M5 12H19"/>
+<path d="M13 6L19 12L13 18"/>
+  </symbol>
+  <symbol id="arrow-up-right" viewBox="0 0 24 24">
+<path d="M7 17L17 7"/>
+<path d="M8 7H17V16"/>
+  </symbol>
+  <symbol id="chain" viewBox="0 0 24 24">
+<path d="M10 13C10.7 14.5 12.3 15.5 14 15.5H17C19.2 15.5 21 13.7 21 11.5C21 9.3 19.2 7.5 17 7.5H14C12.3 7.5 10.7 8.5 10 10"/>
+<path d="M14 11C13.3 9.5 11.7 8.5 10 8.5H7C4.8 8.5 3 10.3 3 12.5C3 14.7 4.8 16.5 7 16.5H10C11.7 16.5 13.3 15.5 14 14"/>
+  </symbol>
+  <symbol id="check" viewBox="0 0 24 24">
+<path d="M5 13L9 17L19 7"/>
+  </symbol>
+  <symbol id="chevron-down" viewBox="0 0 24 24">
+<path d="M6 9L12 15L18 9"/>
+  </symbol>
+  <symbol id="clock" viewBox="0 0 24 24">
+<circle cx="12" cy="12" r="9"/>
+<path d="M12 7V12L15 15"/>
+  </symbol>
+  <symbol id="close" viewBox="0 0 24 24">
+<path d="M6 6L18 18"/>
+<path d="M18 6L6 18"/>
+  </symbol>
+  <symbol id="container" viewBox="0 0 24 24">
+<rect x="3" y="6" width="18" height="12" rx="1"/>
+<path d="M7 6V18"/>
+<path d="M11 6V18"/>
+<path d="M13 6V18"/>
+<path d="M17 6V18"/>
+  </symbol>
+  <symbol id="documents" viewBox="0 0 24 24">
+<path d="M6 3H14L18 7V21H6V3Z"/>
+<path d="M14 3V7H18"/>
+<path d="M9 12H15"/>
+<path d="M9 16H13"/>
+  </symbol>
+  <symbol id="download" viewBox="0 0 24 24">
+<path d="M12 4V15"/>
+<path d="M7 11L12 16L17 11"/>
+<path d="M5 20H19"/>
+  </symbol>
+  <symbol id="external-link" viewBox="0 0 24 24">
+<path d="M14 5H19V10"/>
+<path d="M10 14L19 5"/>
+<path d="M17 13V18C17 18.6 16.6 19 16 19H6C5.4 19 5 18.6 5 18V8C5 7.4 5.4 7 6 7H11"/>
+  </symbol>
+  <symbol id="gem" viewBox="0 0 24 24">
+<path d="M6 8H18L21 13L12 21L3 13L6 8Z"/>
+<path d="M3 13H21"/>
+<path d="M9 8L7.5 13L12 21L16.5 13L15 8"/>
+  </symbol>
+  <symbol id="globe-route" viewBox="0 0 24 24">
+<circle cx="12" cy="12" r="9"/>
+<path d="M3 12H21"/>
+<path d="M12 3C14.5 6.5 16 9.5 16 12C16 14.5 14.5 17.5 12 21C9.5 17.5 8 14.5 8 12C8 9.5 9.5 6.5 12 3Z"/>
+<path d="M5 7C9 8 15 8 19 7" stroke-dasharray="2 1.5"/>
+  </symbol>
+  <symbol id="info" viewBox="0 0 24 24">
+<circle cx="12" cy="12" r="9"/>
+<path d="M12 11V16"/>
+<circle cx="12" cy="8" r="0.75" fill="currentColor"/>
+  </symbol>
+  <symbol id="inspect" viewBox="0 0 24 24">
+<circle cx="11" cy="11" r="6"/>
+<path d="M15.5 15.5L20.5 20.5"/>
+<path d="M11 8V14"/>
+<path d="M8 11H14"/>
+  </symbol>
+  <symbol id="lock" viewBox="0 0 24 24">
+<rect x="5" y="10" width="14" height="11" rx="2"/>
+<path d="M8 10V7C8 4.8 9.8 3 12 3C14.2 3 16 4.8 16 7V10"/>
+  </symbol>
+  <symbol id="logistics-air" viewBox="0 0 24 24">
+<path d="M12 2L14 8L21 11L21 13L14 11V18L16 20V21L12 20L8 21V20L10 18V11L3 13L3 11L10 8L12 2Z"/>
+  </symbol>
+  <symbol id="mail" viewBox="0 0 24 24">
+<rect x="3" y="5" width="18" height="14" rx="2"/>
+<path d="M3 7L12 13L21 7"/>
+  </symbol>
+  <symbol id="map-pin" viewBox="0 0 24 24">
+<path d="M12 2C8.7 2 6 4.7 6 8C6 13 12 21 12 21C12 21 18 13 18 8C18 4.7 15.3 2 12 2Z"/>
+<circle cx="12" cy="8" r="2.5"/>
+  </symbol>
+  <symbol id="menu" viewBox="0 0 24 24">
+<path d="M4 6H20"/>
+<path d="M4 12H20"/>
+<path d="M4 18H20"/>
+  </symbol>
+  <symbol id="mineral" viewBox="0 0 24 24">
+<path d="M4 14L8 6L16 4L20 12L15 20L8 19Z"/>
+<path d="M8 6L13 13L20 12"/>
+<path d="M13 13L15 20"/>
+<path d="M4 14L13 13L8 19"/>
+  </symbol>
+  <symbol id="minus" viewBox="0 0 24 24">
+<path d="M5 12H19"/>
+  </symbol>
+  <symbol id="oil" viewBox="0 0 24 24">
+<path d="M12 3C12 3 6.5 10 6.5 15C6.5 18.0376 8.96243 20.5 12 20.5C15.0376 20.5 17.5 18.0376 17.5 15C17.5 10 12 3 12 3Z"/>
+<path d="M10 15C10 13.5 11 12 12.5 11"/>
+  </symbol>
+  <symbol id="one-contract" viewBox="0 0 24 24">
+<rect x="4" y="3" width="16" height="18" rx="2"/>
+<path d="M8 8H16"/>
+<path d="M8 12H13"/>
+<path d="M15 16L17 14"/>
+<circle cx="8" cy="16" r="1" fill="currentColor"/>
+  </symbol>
+  <symbol id="other-materials" viewBox="0 0 24 24">
+<path d="M4 17L12 13L20 17L12 21L4 17Z"/>
+<path d="M4 12L12 8L20 12L12 16L4 12Z"/>
+<path d="M4 7L12 3L20 7L12 11L4 7Z"/>
+  </symbol>
+  <symbol id="phone" viewBox="0 0 24 24">
+<path d="M5 4H9L10.5 7.5L8.5 9.5C9.5 11.5 11.5 13.5 13.5 14.5L15.5 12.5L19 14V18C19 19.1 18.1 20 17 20C9.8 20 4 14.2 4 7C4 5.9 4.9 4 5 4Z"/>
+  </symbol>
+  <symbol id="plus" viewBox="0 0 24 24">
+<path d="M12 5V19"/>
+<path d="M5 12H19"/>
+  </symbol>
+  <symbol id="process" viewBox="0 0 24 24">
+<path d="M9 3H15"/>
+<path d="M10 3V8L5 17C4.2 18.4 5.2 20 6.8 20H17.2C18.8 20 19.8 18.4 19 17L14 8V3"/>
+<path d="M7.5 14H16.5"/>
+<circle cx="12" cy="16.5" r="0.75" fill="currentColor"/>
+  </symbol>
+  <symbol id="scales" viewBox="0 0 24 24">
+<path d="M12 3V20"/>
+<path d="M5 20H19"/>
+<path d="M6 7H18"/>
+<path d="M6 7L3 13H9L6 7Z"/>
+<path d="M18 7L15 13H21L18 7Z"/>
+  </symbol>
+  <symbol id="seal" viewBox="0 0 24 24">
+<path d="M12 2L15 6H19V10L22 13L19 16V20H15L12 22L9 20H5V16L2 13L5 10V6H9L12 2Z"/>
+<circle cx="12" cy="12" r="2.5"/>
+  </symbol>
+  <symbol id="shield-check" viewBox="0 0 24 24">
+<path d="M12 3L19 6V11.5C19 16.5 15.5 19.8 12 21C8.5 19.8 5 16.5 5 11.5V6L12 3Z"/>
+<path d="M9 11.5L11 13.5L15 9.5"/>
+  </symbol>
+  <symbol id="ship" viewBox="0 0 24 24">
+<path d="M3 16L5 20H19L21 16L19 14H5L3 16Z"/>
+<path d="M8 14V8H15V14"/>
+<path d="M12 8V5"/>
+<path d="M2 21C6 20 10 22 14 20C18 22 21 21 22 21"/>
+  </symbol>
+  <symbol id="social-facebook" viewBox="0 0 24 24">
+<path d="M13 10H16V7H13C11.3 7 10 8.3 10 10V12H7V15H10V21H13V15H16L16.5 12H13V10Z"/>
+  </symbol>
+  <symbol id="social-instagram" viewBox="0 0 24 24">
+<rect x="4" y="4" width="16" height="16" rx="4"/>
+<circle cx="12" cy="12" r="4"/>
+<circle cx="16.5" cy="7.5" r="0.75" fill="currentColor"/>
+  </symbol>
+  <symbol id="social-linkedin" viewBox="0 0 24 24">
+<rect x="4" y="4" width="16" height="16" rx="3"/>
+<path d="M8 11V16"/>
+<path d="M8 8V8.1"/>
+<path d="M12 16V13C12 11.8 12.8 11 14 11C15.2 11 16 11.8 16 13V16"/>
+<path d="M12 11V16"/>
+  </symbol>
+  <symbol id="social-x" viewBox="0 0 24 24">
+<path d="M4 4L10.5 12.5L4 20H6.5L11.8 14L16.5 20H20L13.2 11L19.5 4H17L12 9.8L7.5 4H4Z"/>
+  </symbol>
+  <symbol id="source" viewBox="0 0 24 24">
+<path d="M12 2C8.68629 2 6 4.68629 6 8C6 12.5 12 18 12 18C12 18 18 12.5 18 8C18 4.68629 15.3137 2 12 2Z"/>
+<circle cx="12" cy="8" r="2.5"/>
+<path d="M3 21H21"/>
+<path d="M4 17L8 21"/>
+<path d="M16 21L20 17"/>
+  </symbol>
+  <symbol id="stamp" viewBox="0 0 24 24">
+<path d="M9 4H15V8L18 13V16H6V13L9 8V4Z"/>
+<path d="M4 19H20"/>
+<rect x="5" y="16" width="14" height="2"/>
+  </symbol>
+  <symbol id="tank" viewBox="0 0 24 24">
+<rect x="6" y="5" width="12" height="14" rx="3"/>
+<path d="M6 9H18"/>
+<path d="M6 15H18"/>
+<path d="M10 19V22"/>
+<path d="M14 19V22"/>
+<circle cx="12" cy="12" r="1.5"/>
+  </symbol>
+</svg>

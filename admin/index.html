@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Site admin</title>
+<style>
+  :root{--paper:#fbfaf7;--white:#fff;--stone:#f3f1ea;--line:#e2dfd4;--ink:#17263d;--ink2:#3d4b60;--muted:#5b6678;--navy:#1c3556;--bronze:#8a6a2b;--tint:#f6efe0;--ok:#1f4a3a;--err:#7a2323}
+  *{box-sizing:border-box}
+  body{margin:0;font:16px/1.6 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink2);background:var(--paper)}
+  header{position:sticky;top:0;z-index:10;background:rgba(251,250,247,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .bar{max-width:880px;margin:0 auto;padding:.8rem 1.25rem;display:flex;gap:.75rem;align-items:center;flex-wrap:wrap}
+  .bar h1{font:600 1.15rem Georgia,serif;color:var(--ink);margin:0 auto 0 0}
+  .btn{font:inherit;font-weight:600;font-size:.92rem;padding:.6rem 1.1rem;border-radius:6px;border:1.5px solid var(--navy);background:var(--navy);color:#fff;cursor:pointer;text-decoration:none;display:inline-block}
+  .btn:hover{background:#14263f}
+  .btn.ghost{background:transparent;color:var(--navy)}
+  .btn.ghost:hover{background:var(--navy);color:#fff}
+  .btn.small{padding:.35rem .7rem;font-size:.85rem}
+  .btn:disabled{opacity:.55;cursor:wait}
+  main{max-width:880px;margin:0 auto;padding:1.5rem 1.25rem 5rem}
+  .intro{font-size:.95rem;margin:0 0 1.5rem}
+  .card{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:1.4rem 1.5rem;margin-bottom:1.25rem}
+  .card h2{font:600 1.15rem Georgia,serif;color:var(--ink);margin:0 0 1rem;padding-bottom:.7rem;border-bottom:1px solid var(--line)}
+  .field{margin-bottom:1.1rem}
+  .field:last-child{margin-bottom:0}
+  label.l{display:block;font-weight:600;font-size:.9rem;color:var(--ink);margin-bottom:.3rem}
+  .help{font-size:.82rem;color:var(--muted);margin:.25rem 0 0}
+  input[type=text],textarea{width:100%;font:inherit;font-size:.95rem;color:var(--ink);background:var(--paper);border:1.5px solid #cfcbbd;border-radius:6px;padding:.6rem .75rem}
+  textarea{min-height:120px;resize:vertical}
+  input:focus,textarea:focus{outline:none;border-color:var(--navy);background:#fff;box-shadow:0 0 0 3px rgba(28,53,86,.12)}
+  .img-row{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
+  .thumb{width:120px;height:72px;border:1px dashed #cfcbbd;border-radius:6px;background:var(--stone) center/contain no-repeat;display:grid;place-items:center;font-size:.75rem;color:var(--muted)}
+  .rule{display:grid;grid-template-columns:1fr 1fr auto;gap:.5rem;margin-bottom:.5rem;align-items:center}
+  @media(max-width:620px){.rule{grid-template-columns:1fr}}
+  #status{position:fixed;left:50%;bottom:1.25rem;transform:translateX(-50%);max-width:min(640px,92vw);padding:.85rem 1.2rem;border-radius:8px;font-size:.93rem;display:none;box-shadow:0 8px 28px rgba(23,38,61,.2);z-index:20}
+  #status.show{display:block}
+  #status.ok{background:#e8f3ee;border:1px solid #b6d8c8;color:var(--ok)}
+  #status.err{background:#fbeaea;border:1px solid #efc2c2;color:var(--err)}
+  .note{background:var(--tint);border-left:4px solid #c1a066;padding:.8rem 1rem;border-radius:0 6px 6px 0;font-size:.9rem;margin-bottom:1rem}
+</style>
+</head>
+<body>
+<header><div class="bar">
+  <h1>Site admin</h1>
+  <a class="btn ghost" href="/site/index.html" target="_blank" rel="noopener">Preview site ↗</a>
+  <button class="btn" id="save" type="button">Save &amp; rebuild site</button>
+</div></header>
+<main>
+  <p class="intro">Edit your text, images and links below, then press <strong>Save &amp; rebuild site</strong>. Preview the result, and when you are happy, upload the <code>dist</code> folder to your web host. Yellow-highlighted placeholders on the site disappear once you fill the matching field.</p>
+  <div id="groups"></div>
+
+  <section class="card" id="replace-card">
+    <h2>Find &amp; replace across the whole site</h2>
+    <p class="note">Each rule replaces matching words in every visible page text (headings, paragraphs, buttons, page titles). It never changes links or layout. To rename the company, use the <em>Company name</em> field above instead.</p>
+    <div id="rules"></div>
+    <button class="btn ghost small" id="add-rule" type="button">+ Add a rule</button>
+  </section>
+</main>
+<div id="status" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  "use strict";
+  var TOKEN = "__TOKEN__";
+  var state = {values:{}, schema:[]};
+  var dirty = false;
+  var $ = function(id){return document.getElementById(id)};
+
+  function say(kind, msg){
+    var s = $("status"); s.className = "show " + kind; s.textContent = msg;
+    clearTimeout(say.t); say.t = setTimeout(function(){s.className = ""}, kind === "ok" ? 5000 : 9000);
+  }
+  function api(path, body){
+    var opt = {headers:{"X-Admin-Token":TOKEN}};
+    if (body){ opt.method="POST"; opt.headers["Content-Type"]="application/json"; opt.body=JSON.stringify(body); }
+    return fetch(path, opt).then(function(r){
+      return r.json().then(function(j){ if(!r.ok) throw new Error(j.error || j.log || "Request failed"); return j; });
+    });
+  }
+  function mark(){ dirty = true; }
+
+  function el(tag, props, kids){
+    var e = document.createElement(tag);
+    Object.keys(props||{}).forEach(function(k){
+      if(k==="class") e.className = props[k]; else if(k==="text") e.textContent = props[k]; else e.setAttribute(k, props[k]);
+    });
+    (kids||[]).forEach(function(k){ e.appendChild(k) });
+    return e;
+  }
+
+  function renderField(f){
+    var wrap = el("div",{class:"field"});
+    var id = "f-" + f.key;
+    wrap.appendChild(el("label",{class:"l","for":id,text:f.label}));
+    var v = state.values[f.key] || "";
+    if (f.type === "textarea"){
+      var ta = el("textarea",{id:id}); ta.value = v;
+      ta.addEventListener("input", function(){ state.values[f.key] = ta.value; mark(); });
+      wrap.appendChild(ta);
+    } else if (f.type === "image"){
+      var row = el("div",{class:"img-row"});
+      var th = el("div",{class:"thumb",id:id+"-thumb",text:"No image"});
+      var setThumb = function(){
+        var p = state.values[f.key];
+        if (p){ th.style.backgroundImage = "url('/content/"+p+"')"; th.textContent = ""; }
+        else { th.style.backgroundImage = ""; th.textContent = "No image"; }
+      };
+      setThumb();
+      var file = el("input",{type:"file",accept:".png,.jpg,.jpeg,.webp,.svg,image/*",id:id,style:"display:none"});
+      var up = el("button",{type:"button",class:"btn ghost small",text:"Upload image"});
+      var rm = el("button",{type:"button",class:"btn ghost small",text:"Remove"});
+      up.addEventListener("click", function(){ file.click(); });
+      rm.addEventListener("click", function(){ state.values[f.key] = ""; setThumb(); mark(); });
+      file.addEventListener("change", function(){
+        var fl = file.files[0]; if(!fl) return;
+        if (fl.size > 5*1024*1024){ say("err","Image must be under 5 MB."); return; }
+        var rd = new FileReader();
+        rd.onload = function(){
+          var b64 = String(rd.result).split(",")[1] || "";
+          up.disabled = true; up.textContent = "Uploading…";
+          api("/api/upload",{filename:fl.name,data:b64}).then(function(r){
+            state.values[f.key] = r.path; setThumb(); mark(); say("ok","Image uploaded. Press Save & rebuild to use it.");
+          }).catch(function(e){ say("err", e.message); })
+            .then(function(){ up.disabled=false; up.textContent="Upload image"; file.value=""; });
+        };
+        rd.readAsDataURL(fl);
+      });
+      row.appendChild(th); row.appendChild(up); row.appendChild(rm); row.appendChild(file);
+      wrap.appendChild(row);
+    } else {
+      var inp = el("input",{type:"text",id:id,autocomplete:"off"}); inp.value = v;
+      inp.addEventListener("input", function(){ state.values[f.key] = inp.value; mark(); });
+      wrap.appendChild(inp);
+    }
+    if (f.help) wrap.appendChild(el("p",{class:"help",text:f.help}));
+    return wrap;
+  }
+
+  function renderGroups(){
+    var g = $("groups"); g.textContent = "";
+    state.schema.forEach(function(grp){
+      var card = el("section",{class:"card"});
+      card.appendChild(el("h2",{text:grp.group}));
+      grp.fields.forEach(function(f){ card.appendChild(renderField(f)); });
+      g.appendChild(card);
+    });
+  }
+
+  function renderRules(){
+    var box = $("rules"); box.textContent = "";
+    state.values.replacements.forEach(function(r, i){
+      var a = el("input",{type:"text",placeholder:"Find this text","aria-label":"Find"}); a.value = r[0];
+      var b = el("input",{type:"text",placeholder:"Replace with","aria-label":"Replace with"}); b.value = r[1];
+      var x = el("button",{type:"button",class:"btn ghost small",text:"Remove"});
+      a.addEventListener("input", function(){ r[0]=a.value; mark(); });
+      b.addEventListener("input", function(){ r[1]=b.value; mark(); });
+      x.addEventListener("click", function(){ state.values.replacements.splice(i,1); renderRules(); mark(); });
+      box.appendChild(el("div",{class:"rule"},[a,b,x]));
+    });
+  }
+  $("add-rule").addEventListener("click", function(){ state.values.replacements.push(["",""]); renderRules(); mark(); });
+
+  $("save").addEventListener("click", function(){
+    var btn = $("save");
+    var rules = state.values.replacements.filter(function(r){ return r[0].trim() !== ""; });
+    var payload = JSON.parse(JSON.stringify(state.values)); payload.replacements = rules;
+    btn.disabled = true; btn.textContent = "Saving…";
+    api("/api/content", payload).then(function(){
+      dirty = false; state.values.replacements = rules; renderRules();
+      say("ok","Saved and rebuilt. Use “Preview site” to check it.");
+    }).catch(function(e){ say("err", e.message); })
+      .then(function(){ btn.disabled=false; btn.textContent="Save & rebuild site"; });
+  });
+
+  window.addEventListener("beforeunload", function(e){ if(dirty){ e.preventDefault(); e.returnValue = ""; } });
+
+  api("/api/state").then(function(s){
+    state.values = s.values; state.schema = s.schema;
+    if (!Array.isArray(state.values.replacements)) state.values.replacements = [];
+    renderGroups(); renderRules();
+  }).catch(function(e){ say("err", e.message); });
+})();
+</script>
+</body>
+</html>

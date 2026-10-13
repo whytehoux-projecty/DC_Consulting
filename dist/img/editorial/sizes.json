@@ -1,0 +1,1037 @@
+{
+  "commodity-crude-oil-refinery": {
+    "aspect_ratio": 0.5581,
+    "original_size": [
+      1376,
+      768
+    ],
+    "variants": {
+      "480": {
+        "width": 480,
+        "height": 268,
+        "files": {
+          "avif": {
+            "file": "commodity-crude-oil-refinery-480w.avif",
+            "bytes": 6323
+          },
+          "webp": {
+            "file": "commodity-crude-oil-refinery-480w.webp",
+            "bytes": 9952
+          },
+          "jpeg": {
+            "file": "commodity-crude-oil-refinery-480w.jpg",
+            "bytes": 18526
+          }
+        }
+      },
+      "800": {
+        "width": 800,
+        "height": 447,
+        "files": {
+          "avif": {
+            "file": "commodity-crude-oil-refinery-800w.avif",
+            "bytes": 11100
+          },
+          "webp": {
+            "file": "commodity-crude-oil-refinery-800w.webp",
+            "bytes": 19220
+          },
+          "jpeg": {
+            "file": "commodity-crude-oil-refinery-800w.jpg",
+            "bytes": 40793
+          }
+        }
+      },
+      "1200": {
+        "width": 1200,
+        "height": 670,
+        "files": {
+          "avif": {
+            "file": "commodity-crude-oil-refinery-1200w.avif",
+            "bytes": 18219
+          },
+          "webp": {
+            "file": "commodity-crude-oil-refinery-1200w.webp",
+            "bytes": 34576
+          },
+          "jpeg": {
+            "file": "commodity-crude-oil-refinery-1200w.jpg",
+            "bytes": 79146
+          }
+        }
+      },
+      "1376": {
+        "width": 1376,
+        "height": 768,
+        "files": {
+          "avif": {
+            "file": "commodity-crude-oil-refinery-1376w.avif",
+            "bytes": 23661
+          },
+          "webp": {
+            "file": "commodity-crude-oil-refinery-1376w.webp",
+            "bytes": 44264
+          },
+          "jpeg": {
+            "file": "commodity-crude-oil-refinery-1376w.jpg",
+            "bytes": 88126
+          }
+        }
+      }
+    }
+  },
+  "commodity-gems-display": {
+    "aspect_ratio": 0.5455,
+    "original_size": [
+      1408,
+      768
+    ],
+    "variants": {
+      "480": {
+        "width": 480,
+        "height": 262,
+        "files": {
+          "avif": {
+            "file": "commodity-gems-display-480w.avif",
+            "bytes": 11636
+          },
+          "webp": {
+            "file": "commodity-gems-display-480w.webp",
+            "bytes": 16010
+          },
+          "jpeg": {
+            "file": "commodity-gems-display-480w.jpg",
+            "bytes": 22412
+          }
+        }
+      },
+      "800": {
+        "width": 800,
+        "height": 436,
+        "files": {
+          "avif": {
+            "file": "commodity-gems-display-800w.avif",
+            "bytes": 22035
+          },
+          "webp": {
+            "file": "commodity-gems-display-800w.webp",
+            "bytes": 33170
+          },
+          "jpeg": {
+            "file": "commodity-gems-display-800w.jpg",
+            "bytes": 49808
+          }
+        }
+      },
+      "1200": {
+        "width": 1200,
+        "height": 655,
+        "files": {
+          "avif": {
+            "file": "commodity-gems-display-1200w.avif",
+            "bytes": 35060
+          },
+          "webp": {
+            "file": "commodity-gems-display-1200w.webp",
+            "bytes": 56452
+          },
+          "jpeg": {
+            "file": "commodity-gems-display-1200w.jpg",
+            "bytes": 92775
+          }
+        }
+      },
+      "1400": {
+        "width": 1400,
+        "height": 764,
+        "files": {
+          "avif": {
+            "file": "commodity-gems-display-1400w.avif",
+            "bytes": 41262
+          },
+          "webp": {
+            "file": "commodity-gems-display-1400w.webp",
+            "bytes": 69378
+          },
+          "jpeg": {
+            "file": "commodity-gems-display-1400w.jpg",
+            "bytes": 116899
+          }
+        }
+      }
+    }
+  },
+  "commodity-rare-earths-specimen": {
+    "aspect_ratio": 0.5455,
+    "original_size": [
+      1408,
+      768
+    ],
+    "variants": {
+      "480": {
+        "width": 480,
+        "height": 262,
+        "files": {
+          "avif": {
+            "file": "commodity-rare-earths-specimen-480w.avif",
+            "bytes": 11393
+          },
+          "webp": {
+            "file": "commodity-rare-earths-specimen-480w.webp",
+            "bytes": 15806
+          },
+          "jpeg": {
+            "file": "commodity-rare-earths-specimen-480w.jpg",
+            "bytes": 24019
+          }
+        }
+      },
+      "800": {
+        "width": 800,
+        "height": 436,
+        "files": {
+          "avif": {
+            "file": "commodity-rare-earths-specimen-800w.avif",
+            "bytes": 20423
+          },
+          "webp": {
+            "file": "commodity-rare-earths-specimen-800w.webp",
+            "bytes": 30598
+          },
+          "jpeg": {
+            "file": "commodity-rare-earths-specimen-800w.jpg",
+            "bytes": 51882
+          }
+        }
+      },
+      "1200": {
+        "width": 1200,
+        "height": 655,
+        "files": {
+          "avif": {
+            "file": "commodity-rare-earths-specimen-1200w.avif",
+            "bytes": 31841
+          },
+          "webp": {
+            "file": "commodity-rare-earths-specimen-1200w.webp",
+            "bytes": 50946
+          },
+          "jpeg": {
+            "file": "commodity-rare-earths-specimen-1200w.jpg",
+            "bytes": 95570
+          }
+        }
+      },
+      "1400": {
+        "width": 1400,
+        "height": 764,
+        "files": {
+          "avif": {
+            "file": "commodity-rare-earths-specimen-1400w.avif",
+            "bytes": 37760
+          },
+          "webp": {
+            "file": "commodity-rare-earths-specimen-1400w.webp",
+            "bytes": 62366
+          },
+          "jpeg": {
+            "file": "commodity-rare-earths-specimen-1400w.jpg",
+            "bytes": 121180
+          }
+        }
+      }
+    }
+  },
+  "compliance-documentation-desk": {
+    "aspect_ratio": 0.5455,
+    "original_size": [
+      1408,
+      768
+    ],
+    "variants": {
+      "480": {
+        "width": 480,
+        "height": 262,
+        "files": {
+          "avif": {
+            "file": "compliance-documentation-desk-480w.avif",
+            "bytes": 9478
+          },
+          "webp": {
+            "file": "compliance-documentation-desk-480w.webp",
+            "bytes": 14984
+          },
+          "jpeg": {
+            "file": "compliance-documentation-desk-480w.jpg",
+            "bytes": 23739
+          }
+        }
+      },
+      "800": {
+        "width": 800,
+        "height": 436,
+        "files": {
+          "avif": {
+            "file": "compliance-documentation-desk-800w.avif",
+            "bytes": 16688
+          },
+          "webp": {
+            "file": "compliance-documentation-desk-800w.webp",
+            "bytes": 29390
+          },
+          "jpeg": {
+            "file": "compliance-documentation-desk-800w.jpg",
+            "bytes": 51512
+          }
+        }
+      },
+      "1200": {
+        "width": 1200,
+        "height": 655,
+        "files": {
+          "avif": {
+            "file": "compliance-documentation-desk-1200w.avif",
+            "bytes": 25452
+          },
+          "webp": {
+            "file": "compliance-documentation-desk-1200w.webp",
+            "bytes": 48392
+          },
+          "jpeg": {
+            "file": "compliance-documentation-desk-1200w.jpg",
+            "bytes": 94166
+          }
+        }
+      },
+      "1400": {
+        "width": 1400,
+        "height": 764,
+        "files": {
+          "avif": {
+            "file": "compliance-documentation-desk-1400w.avif",
+            "bytes": 30584
+          },
+          "webp": {
+            "file": "compliance-documentation-desk-1400w.webp",
+            "bytes": 59366
+          },
+          "jpeg": {
+            "file": "compliance-documentation-desk-1400w.jpg",
+            "bytes": 119136
+          }
+        }
+      }
+    }
+  },
+  "corporate-mandate-execution": {
+    "aspect_ratio": 0.5455,
+    "original_size": [
+      1408,
+      768
+    ],
+    "variants": {
+      "480": {
+        "width": 480,
+        "height": 262,
+        "files": {
+          "avif": {
+            "file": "corporate-mandate-execution-480w.avif",
+            "bytes": 10018
+          },
+          "webp": {
+            "file": "corporate-mandate-execution-480w.webp",
+            "bytes": 13224
+          },
+          "jpeg": {
+            "file": "corporate-mandate-execution-480w.jpg",
+            "bytes": 21947
+          }
+        }
+      },
+      "800": {
+        "width": 800,
+        "height": 436,
+        "files": {
+          "avif": {
+            "file": "corporate-mandate-execution-800w.avif",
+            "bytes": 20119
+          },
+          "webp": {
+            "file": "corporate-mandate-execution-800w.webp",
+            "bytes": 27526
+          },
+          "jpeg": {
+            "file": "corporate-mandate-execution-800w.jpg",
+            "bytes": 48565
+          }
+        }
+      },
+      "1200": {
+        "width": 1200,
+        "height": 655,
+        "files": {
+          "avif": {
+            "file": "corporate-mandate-execution-1200w.avif",
+            "bytes": 34455
+          },
+          "webp": {
+            "file": "corporate-mandate-execution-1200w.webp",
+            "bytes": 49446
+          },
+          "jpeg": {
+            "file": "corporate-mandate-execution-1200w.jpg",
+            "bytes": 92789
+          }
+        }
+      },
+      "1400": {
+        "width": 1400,
+        "height": 764,
+        "files": {
+          "avif": {
+            "file": "corporate-mandate-execution-1400w.avif",
+            "bytes": 42053
+          },
+          "webp": {
+            "file": "corporate-mandate-execution-1400w.webp",
+            "bytes": 61940
+          },
+          "jpeg": {
+            "file": "corporate-mandate-execution-1400w.jpg",
+            "bytes": 118005
+          }
+        }
+      }
+    }
+  },
+  "global-trade-routes-office": {
+    "aspect_ratio": 0.5455,
+    "original_size": [
+      1408,
+      768
+    ],
+    "variants": {
+      "480": {
+        "width": 480,
+        "height": 262,
+        "files": {
+          "avif": {
+            "file": "global-trade-routes-office-480w.avif",
+            "bytes": 9702
+          },
+          "webp": {
+            "file": "global-trade-routes-office-480w.webp",
+            "bytes": 14032
+          },
+          "jpeg": {
+            "file": "global-trade-routes-office-480w.jpg",
+            "bytes": 22877
+          }
+        }
+      },
+      "800": {
+        "width": 800,
+        "height": 436,
+        "files": {
+          "avif": {
+            "file": "global-trade-routes-office-800w.avif",
+            "bytes": 17086
+          },
+          "webp": {
+            "file": "global-trade-routes-office-800w.webp",
+            "bytes": 26880
+          },
+          "jpeg": {
+            "file": "global-trade-routes-office-800w.jpg",
+            "bytes": 49874
+          }
+        }
+      },
+      "1200": {
+        "width": 1200,
+        "height": 655,
+        "files": {
+          "avif": {
+            "file": "global-trade-routes-office-1200w.avif",
+            "bytes": 26488
+          },
+          "webp": {
+            "file": "global-trade-routes-office-1200w.webp",
+            "bytes": 45170
+          },
+          "jpeg": {
+            "file": "global-trade-routes-office-1200w.jpg",
+            "bytes": 92781
+          }
+        }
+      },
+      "1400": {
+        "width": 1400,
+        "height": 764,
+        "files": {
+          "avif": {
+            "file": "global-trade-routes-office-1400w.avif",
+            "bytes": 31533
+          },
+          "webp": {
+            "file": "global-trade-routes-office-1400w.webp",
+            "bytes": 55296
+          },
+          "jpeg": {
+            "file": "global-trade-routes-office-1400w.jpg",
+            "bytes": 118019
+          }
+        }
+      }
+    }
+  },
+  "inspection-geological-assay": {
+    "aspect_ratio": 0.5455,
+    "original_size": [
+      1408,
+      768
+    ],
+    "variants": {
+      "480": {
+        "width": 480,
+        "height": 262,
+        "files": {
+          "avif": {
+            "file": "inspection-geological-assay-480w.avif",
+            "bytes": 12126
+          },
+          "webp": {
+            "file": "inspection-geological-assay-480w.webp",
+            "bytes": 16886
+          },
+          "jpeg": {
+            "file": "inspection-geological-assay-480w.jpg",
+            "bytes": 25489
+          }
+        }
+      },
+      "800": {
+        "width": 800,
+        "height": 436,
+        "files": {
+          "avif": {
+            "file": "inspection-geological-assay-800w.avif",
+            "bytes": 21893
+          },
+          "webp": {
+            "file": "inspection-geological-assay-800w.webp",
+            "bytes": 32830
+          },
+          "jpeg": {
+            "file": "inspection-geological-assay-800w.jpg",
+            "bytes": 55005
+          }
+        }
+      },
+      "1200": {
+        "width": 1200,
+        "height": 655,
+        "files": {
+          "avif": {
+            "file": "inspection-geological-assay-1200w.avif",
+            "bytes": 34617
+          },
+          "webp": {
+            "file": "inspection-geological-assay-1200w.webp",
+            "bytes": 55158
+          },
+          "jpeg": {
+            "file": "inspection-geological-assay-1200w.jpg",
+            "bytes": 101176
+          }
+        }
+      },
+      "1400": {
+        "width": 1400,
+        "height": 764,
+        "files": {
+          "avif": {
+            "file": "inspection-geological-assay-1400w.avif",
+            "bytes": 41082
+          },
+          "webp": {
+            "file": "inspection-geological-assay-1400w.webp",
+            "bytes": 67674
+          },
+          "jpeg": {
+            "file": "inspection-geological-assay-1400w.jpg",
+            "bytes": 128049
+          }
+        }
+      }
+    }
+  },
+  "leadership-director-portrait": {
+    "aspect_ratio": 0.7467,
+    "original_size": [
+      1200,
+      896
+    ],
+    "variants": {
+      "480": {
+        "width": 480,
+        "height": 358,
+        "files": {
+          "avif": {
+            "file": "leadership-director-portrait-480w.avif",
+            "bytes": 6973
+          },
+          "webp": {
+            "file": "leadership-director-portrait-480w.webp",
+            "bytes": 10724
+          },
+          "jpeg": {
+            "file": "leadership-director-portrait-480w.jpg",
+            "bytes": 21012
+          }
+        }
+      },
+      "800": {
+        "width": 800,
+        "height": 597,
+        "files": {
+          "avif": {
+            "file": "leadership-director-portrait-800w.avif",
+            "bytes": 12151
+          },
+          "webp": {
+            "file": "leadership-director-portrait-800w.webp",
+            "bytes": 20126
+          },
+          "jpeg": {
+            "file": "leadership-director-portrait-800w.jpg",
+            "bytes": 44102
+          }
+        }
+      },
+      "1200": {
+        "width": 1200,
+        "height": 896,
+        "files": {
+          "avif": {
+            "file": "leadership-director-portrait-1200w.avif",
+            "bytes": 20711
+          },
+          "webp": {
+            "file": "leadership-director-portrait-1200w.webp",
+            "bytes": 35638
+          },
+          "jpeg": {
+            "file": "leadership-director-portrait-1200w.jpg",
+            "bytes": 73282
+          }
+        }
+      }
+    }
+  },
+  "logistics-charter-operations": {
+    "aspect_ratio": 0.5455,
+    "original_size": [
+      1408,
+      768
+    ],
+    "variants": {
+      "480": {
+        "width": 480,
+        "height": 262,
+        "files": {
+          "avif": {
+            "file": "logistics-charter-operations-480w.avif",
+            "bytes": 5592
+          },
+          "webp": {
+            "file": "logistics-charter-operations-480w.webp",
+            "bytes": 9036
+          },
+          "jpeg": {
+            "file": "logistics-charter-operations-480w.jpg",
+            "bytes": 16728
+          }
+        }
+      },
+      "800": {
+        "width": 800,
+        "height": 436,
+        "files": {
+          "avif": {
+            "file": "logistics-charter-operations-800w.avif",
+            "bytes": 9605
+          },
+          "webp": {
+            "file": "logistics-charter-operations-800w.webp",
+            "bytes": 17412
+          },
+          "jpeg": {
+            "file": "logistics-charter-operations-800w.jpg",
+            "bytes": 37349
+          }
+        }
+      },
+      "1200": {
+        "width": 1200,
+        "height": 655,
+        "files": {
+          "avif": {
+            "file": "logistics-charter-operations-1200w.avif",
+            "bytes": 16699
+          },
+          "webp": {
+            "file": "logistics-charter-operations-1200w.webp",
+            "bytes": 33130
+          },
+          "jpeg": {
+            "file": "logistics-charter-operations-1200w.jpg",
+            "bytes": 74218
+          }
+        }
+      },
+      "1400": {
+        "width": 1400,
+        "height": 764,
+        "files": {
+          "avif": {
+            "file": "logistics-charter-operations-1400w.avif",
+            "bytes": 21631
+          },
+          "webp": {
+            "file": "logistics-charter-operations-1400w.webp",
+            "bytes": 42376
+          },
+          "jpeg": {
+            "file": "logistics-charter-operations-1400w.jpg",
+            "bytes": 97313
+          }
+        }
+      }
+    }
+  },
+  "logistics-intermodal-hub": {
+    "aspect_ratio": 0.5455,
+    "original_size": [
+      1408,
+      768
+    ],
+    "variants": {
+      "480": {
+        "width": 480,
+        "height": 262,
+        "files": {
+          "avif": {
+            "file": "logistics-intermodal-hub-480w.avif",
+            "bytes": 9854
+          },
+          "webp": {
+            "file": "logistics-intermodal-hub-480w.webp",
+            "bytes": 13566
+          },
+          "jpeg": {
+            "file": "logistics-intermodal-hub-480w.jpg",
+            "bytes": 21634
+          }
+        }
+      },
+      "800": {
+        "width": 800,
+        "height": 436,
+        "files": {
+          "avif": {
+            "file": "logistics-intermodal-hub-800w.avif",
+            "bytes": 20869
+          },
+          "webp": {
+            "file": "logistics-intermodal-hub-800w.webp",
+            "bytes": 29412
+          },
+          "jpeg": {
+            "file": "logistics-intermodal-hub-800w.jpg",
+            "bytes": 51515
+          }
+        }
+      },
+      "1200": {
+        "width": 1200,
+        "height": 655,
+        "files": {
+          "avif": {
+            "file": "logistics-intermodal-hub-1200w.avif",
+            "bytes": 36197
+          },
+          "webp": {
+            "file": "logistics-intermodal-hub-1200w.webp",
+            "bytes": 53988
+          },
+          "jpeg": {
+            "file": "logistics-intermodal-hub-1200w.jpg",
+            "bytes": 100600
+          }
+        }
+      },
+      "1400": {
+        "width": 1400,
+        "height": 764,
+        "files": {
+          "avif": {
+            "file": "logistics-intermodal-hub-1400w.avif",
+            "bytes": 44904
+          },
+          "webp": {
+            "file": "logistics-intermodal-hub-1400w.webp",
+            "bytes": 67738
+          },
+          "jpeg": {
+            "file": "logistics-intermodal-hub-1400w.jpg",
+            "bytes": 130154
+          }
+        }
+      }
+    }
+  },
+  "port-container-terminal": {
+    "aspect_ratio": 0.5455,
+    "original_size": [
+      1408,
+      768
+    ],
+    "variants": {
+      "480": {
+        "width": 480,
+        "height": 262,
+        "files": {
+          "avif": {
+            "file": "port-container-terminal-480w.avif",
+            "bytes": 15628
+          },
+          "webp": {
+            "file": "port-container-terminal-480w.webp",
+            "bytes": 20808
+          },
+          "jpeg": {
+            "file": "port-container-terminal-480w.jpg",
+            "bytes": 27611
+          }
+        }
+      },
+      "800": {
+        "width": 800,
+        "height": 436,
+        "files": {
+          "avif": {
+            "file": "port-container-terminal-800w.avif",
+            "bytes": 33528
+          },
+          "webp": {
+            "file": "port-container-terminal-800w.webp",
+            "bytes": 46570
+          },
+          "jpeg": {
+            "file": "port-container-terminal-800w.jpg",
+            "bytes": 65763
+          }
+        }
+      },
+      "1200": {
+        "width": 1200,
+        "height": 655,
+        "files": {
+          "avif": {
+            "file": "port-container-terminal-1200w.avif",
+            "bytes": 59139
+          },
+          "webp": {
+            "file": "port-container-terminal-1200w.webp",
+            "bytes": 83902
+          },
+          "jpeg": {
+            "file": "port-container-terminal-1200w.jpg",
+            "bytes": 128739
+          }
+        }
+      },
+      "1400": {
+        "width": 1400,
+        "height": 764,
+        "files": {
+          "avif": {
+            "file": "port-container-terminal-1400w.avif",
+            "bytes": 72702
+          },
+          "webp": {
+            "file": "port-container-terminal-1400w.webp",
+            "bytes": 104920
+          },
+          "jpeg": {
+            "file": "port-container-terminal-1400w.jpg",
+            "bytes": 166082
+          }
+        }
+      }
+    }
+  },
+  "processing-facility-plant": {
+    "aspect_ratio": 0.5455,
+    "original_size": [
+      1408,
+      768
+    ],
+    "variants": {
+      "480": {
+        "width": 480,
+        "height": 262,
+        "files": {
+          "avif": {
+            "file": "processing-facility-plant-480w.avif",
+            "bytes": 21242
+          },
+          "webp": {
+            "file": "processing-facility-plant-480w.webp",
+            "bytes": 28346
+          },
+          "jpeg": {
+            "file": "processing-facility-plant-480w.jpg",
+            "bytes": 36793
+          }
+        }
+      },
+      "800": {
+        "width": 800,
+        "height": 436,
+        "files": {
+          "avif": {
+            "file": "processing-facility-plant-800w.avif",
+            "bytes": 39922
+          },
+          "webp": {
+            "file": "processing-facility-plant-800w.webp",
+            "bytes": 56546
+          },
+          "jpeg": {
+            "file": "processing-facility-plant-800w.jpg",
+            "bytes": 82227
+          }
+        }
+      },
+      "1200": {
+        "width": 1200,
+        "height": 655,
+        "files": {
+          "avif": {
+            "file": "processing-facility-plant-1200w.avif",
+            "bytes": 62868
+          },
+          "webp": {
+            "file": "processing-facility-plant-1200w.webp",
+            "bytes": 94070
+          },
+          "jpeg": {
+            "file": "processing-facility-plant-1200w.jpg",
+            "bytes": 152065
+          }
+        }
+      },
+      "1400": {
+        "width": 1400,
+        "height": 764,
+        "files": {
+          "avif": {
+            "file": "processing-facility-plant-1400w.avif",
+            "bytes": 74427
+          },
+          "webp": {
+            "file": "processing-facility-plant-1400w.webp",
+            "bytes": 112426
+          },
+          "jpeg": {
+            "file": "processing-facility-plant-1400w.jpg",
+            "bytes": 191467
+          }
+        }
+      }
+    }
+  },
+  "sourcing-gemstone-tender": {
+    "aspect_ratio": 0.5455,
+    "original_size": [
+      1408,
+      768
+    ],
+    "variants": {
+      "480": {
+        "width": 480,
+        "height": 262,
+        "files": {
+          "avif": {
+            "file": "sourcing-gemstone-tender-480w.avif",
+            "bytes": 6250
+          },
+          "webp": {
+            "file": "sourcing-gemstone-tender-480w.webp",
+            "bytes": 10092
+          },
+          "jpeg": {
+            "file": "sourcing-gemstone-tender-480w.jpg",
+            "bytes": 17009
+          }
+        }
+      },
+      "800": {
+        "width": 800,
+        "height": 436,
+        "files": {
+          "avif": {
+            "file": "sourcing-gemstone-tender-800w.avif",
+            "bytes": 10874
+          },
+          "webp": {
+            "file": "sourcing-gemstone-tender-800w.webp",
+            "bytes": 18934
+          },
+          "jpeg": {
+            "file": "sourcing-gemstone-tender-800w.jpg",
+            "bytes": 35386
+          }
+        }
+      },
+      "1200": {
+        "width": 1200,
+        "height": 655,
+        "files": {
+          "avif": {
+            "file": "sourcing-gemstone-tender-1200w.avif",
+            "bytes": 16601
+          },
+          "webp": {
+            "file": "sourcing-gemstone-tender-1200w.webp",
+            "bytes": 31486
+          },
+          "jpeg": {
+            "file": "sourcing-gemstone-tender-1200w.jpg",
+            "bytes": 64773
+          }
+        }
+      },
+      "1400": {
+        "width": 1400,
+        "height": 764,
+        "files": {
+          "avif": {
+            "file": "sourcing-gemstone-tender-1400w.avif",
+            "bytes": 19897
+          },
+          "webp": {
+            "file": "sourcing-gemstone-tender-1400w.webp",
+            "bytes": 38242
+          },
+          "jpeg": {
+            "file": "sourcing-gemstone-tender-1400w.jpg",
+            "bytes": 82081
+          }
+        }
+      }
+    }
+  }
+}
