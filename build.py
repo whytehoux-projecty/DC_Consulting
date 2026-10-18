@@ -284,12 +284,12 @@ def header(active):
       <span class="brand-name">{SITE["name"]}<span class="brand-sub">{esc(C["tagline"])}</span></span>
     </a>
     <nav class="nav" aria-label="Main"><ul>{links}</ul></nav>
-    <a class="btn btn--sm header-cta" href="contact.html">Submit Mandate</a>
+    <a class="btn btn--sm header-cta" href="contact.html">Submit Quote</a>
     <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
     </button>
   </div>
-  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile">{mlinks}<a class="btn" href="contact.html">Submit Mandate</a></nav>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile">{mlinks}<a class="btn" href="contact.html">Submit Quote</a></nav>
 </header>'''
 
 def footer():
@@ -401,7 +401,7 @@ def page_head(crumb, h1, lead):
 def cta(title="Have a requirement or an active mandate?", text="Tell us what you need, the quantity and where it must be delivered. We will reply with what we can and cannot do."):
     return f'''<section class="cta-band"><div class="container"><div class="cta-inner">
   <div><h2>{title}</h2><p>{text}</p></div>
-  <a class="btn" href="contact.html">Submit a mandate</a>
+  <a class="btn" href="contact.html">Submit a quote</a>
 </div></div></section>'''
 
 # ----------------------------------------------------------------- HOME
@@ -412,7 +412,7 @@ home = f'''
     <h1>{esc(C["home_h1"])}</h1>
     <p class="lead">{esc(C["home_lead"])}</p>
     <div class="btn-row">
-      <a class="btn" href="contact.html">Submit a mandate</a>
+      <a class="btn" href="contact.html">Submit a quote</a>
       <a class="btn btn--ghost" href="about.html">Explore how we work</a>
     </div>
   </div>
