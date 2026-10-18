@@ -185,13 +185,27 @@ if _hero:
     HERO_IMG = f'<img class="hero-img" src="{_hero}" alt="{HERO_ALT}" width="1600" height="900" fetchpriority="high">'
     HERO_PRELOAD = ""
 else:
-    HERO_IMG = editorial_picture("global-trade-routes-office", "Global trade route network connecting origin concessions to international discharge destinations", sizes=HERO_SIZES)
+    HERO_IMG = editorial_picture("global-trade-routes-office", "Executive operations room with a backlit world map of global shipping routes", sizes=HERO_SIZES)
     HERO_PRELOAD = ""
 
+# Bespoke glyphs: mitred strokes, square caps, drawn on a 24px grid to match the site's engineered geometry.
+_SOCIAL_GLYPHS = {
+    "linkedin": '<path d="M6 10v8.5"/><path d="M10.5 18.5V10"/><path d="M10.5 13.6c0-2.1 1.5-3.6 3.6-3.6s3.4 1.3 3.4 3.6v4.9"/><path d="M6 5.6v.9" stroke-width="2.6"/>',
+    "x": '<path d="M5 4.5h3.6L19 19.5h-3.6z"/><path d="M18.6 4.5l-5.1 6.1"/><path d="M5.4 19.5l5.2-6.2"/>',
+    "facebook": '<path d="M13.6 20.5V9.4c0-2.8 1.3-4.4 3.9-4.4h.9"/><path d="M9.8 12.4h7.6"/>',
+    "instagram": '<path d="M5 5h14v14H5z"/><circle cx="12" cy="12" r="3.4"/><path d="M16.6 7.4h.01" stroke-width="2.4"/>',
+}
 _social_defs = [("linkedin", "LinkedIn"), ("x", "X"), ("facebook", "Facebook"), ("instagram", "Instagram")]
-SOCIALS = "".join(
-    f'<li><a href="{esc(safe_url(C[k]))}" target="_blank" rel="noopener noreferrer">{lbl}</a></li>'
-    for k, lbl in _social_defs if safe_url(C[k]))
+
+def _social_tile(k, lbl):
+    svg = (f'<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" '
+           f'stroke-width="1.7" stroke-linecap="square" stroke-linejoin="miter">{_SOCIAL_GLYPHS[k]}</svg>')
+    url = safe_url(C[k])
+    if url:
+        return f'<a class="social" href="{esc(url)}" target="_blank" rel="noopener noreferrer" aria-label="{esc(C["name"].strip() or OLD_NAME)} on {lbl}" title="{lbl}">{svg}</a>'
+    return f'<span class="social is-off" aria-hidden="true">{svg}</span>'
+
+SOCIALS = '<div class="social-row" role="group" aria-label="Social media"><span class="social-label">Follow</span>' + "".join(_social_tile(k, l) for k, l in _social_defs) + '</div>'
 
 def _ceo_section():
     photo = safe_asset(C["ceo_photo"])
@@ -256,7 +270,13 @@ def header(active):
         f'<li><a href="{h}"{cur(h)}>{t}</a></li>' for h, t in NAV)
     mlinks = "".join(
         f'<a href="{h}"{cur(h)}>{t}</a>' for h, t in NAV)
+    live_badge = "" if active == "index.html" else '<span class="live"><i class="dot" aria-hidden="true"></i>Mandate desk open</span>'
     return f'''<a class="skip-link" href="#main">Skip to main content</a>
+<div class="status-bar" role="note"><div class="container status-inner">
+  <span class="st-hide">B2B &middot; Corporate, Defence &amp; Government mandates</span>
+  <span class="st-hide">NCNDA available on request</span>
+  {live_badge}
+</div></div>
 <header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="index.html" aria-label="{SITE["name"]} home">
@@ -264,12 +284,12 @@ def header(active):
       <span class="brand-name">{SITE["name"]}<span class="brand-sub">{esc(C["tagline"])}</span></span>
     </a>
     <nav class="nav" aria-label="Main"><ul>{links}</ul></nav>
-    <a class="btn btn--sm header-cta" href="contact.html">Make an enquiry</a>
+    <a class="btn btn--sm header-cta" href="contact.html">Submit Mandate</a>
     <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
     </button>
   </div>
-  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile">{mlinks}<a class="btn" href="contact.html">Make an enquiry</a></nav>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile">{mlinks}<a class="btn" href="contact.html">Submit Mandate</a></nav>
 </header>'''
 
 def footer():
@@ -279,6 +299,7 @@ def footer():
       <div>
         <a class="brand" href="index.html">{BRAND_MARK}<span class="brand-name">{SITE["name"]}</span></a>
         <p class="footer-note" style="margin-top:1rem">We source, process, document and ship rare earth minerals, crude oil and gemstones for procurement firms, corporations and institutions.</p>
+        <div class="footer-badges"><span class="chip chip--ok">NCNDA on request</span><span class="chip">Independent inspection</span><span class="chip">B2B only</span></div>
       </div>
       <div><h4>Company</h4><ul>
         <li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li>
@@ -288,7 +309,7 @@ def footer():
         <li><a href="commodities.html#gems">Gemstones</a></li><li><a href="commodities.html#other">Other materials</a></li></ul></div>
       <div><h4>Get in touch</h4><ul>
         <li><a href="mailto:{SITE["email"]}">{SITE["email"]}</a></li>
-        <li>{todo(SITE["phone"])}</li><li>{todo(SITE["address"])}</li>{SOCIALS}</ul></div>
+        <li>{todo(SITE["phone"])}</li><li>{todo(SITE["address"])}</li></ul>{SOCIALS}</div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 {todo(SITE["company_no"])}. All rights reserved.</span>
@@ -339,7 +360,7 @@ def page(fname, title, desc, body, head_extra=""):
 <meta property="og:title" content="{full_title}">
 <meta property="og:description" content="{desc}">
 <meta property="og:url" content="{url}">
-<meta name="theme-color" content="#fbfaf7">
+<meta name="theme-color" content="#0A1628">
 <meta property="og:image" content="{SITE["domain"]}/img/social/og-default.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -352,7 +373,8 @@ def page(fname, title, desc, body, head_extra=""):
 <link rel="manifest" href="img/favicons/site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet">
+<script>document.documentElement.className+=' js';</script>
 <link rel="stylesheet" href="css/styles.css">
 {head_extra}
 </head>
@@ -379,31 +401,28 @@ def page_head(crumb, h1, lead):
 def cta(title="Have a requirement or an active mandate?", text="Tell us what you need, the quantity and where it must be delivered. We will reply with what we can and cannot do."):
     return f'''<section class="cta-band"><div class="container"><div class="cta-inner">
   <div><h2>{title}</h2><p>{text}</p></div>
-  <a class="btn" href="contact.html">Make an enquiry</a>
+  <a class="btn" href="contact.html">Submit a mandate</a>
 </div></div></section>'''
 
 # ----------------------------------------------------------------- HOME
 home = f'''
 <section class="hero"><div class="container hero-grid">
-  <div>
+  <div class="reveal">
     <span class="eyebrow">{esc(C["home_eyebrow"])}</span>
     <h1>{esc(C["home_h1"])}</h1>
     <p class="lead">{esc(C["home_lead"])}</p>
     <div class="btn-row">
-      <a class="btn" href="contact.html">Make an enquiry</a>
-      <a class="btn btn--ghost" href="services.html">See how we work</a>
+      <a class="btn" href="contact.html">Submit a mandate</a>
+      <a class="btn btn--ghost" href="about.html">Explore how we work</a>
     </div>
   </div>
-  <aside class="hero-card" aria-label="Our process">
-    {HERO_IMG}
-    <h2>One contractor, four stages</h2>
-    <ol class="steps">
-      <li><strong>Source</strong><span>Secure material at origin and confirm it exists.</span></li>
-      <li><strong>Process</strong><span>Refine, sort or blend to the buyer’s specification.</span></li>
-      <li><strong>Document</strong><span>Assemble permits, assays and chain-of-custody records.</span></li>
-      <li><strong>Ship</strong><span>Move it to the agreed port, airport or vault.</span></li>
-    </ol>
-  </aside>
+</div></section>
+
+<section class="trust" aria-label="Execution capabilities"><div class="container trust-grid">
+  <div class="trust-item"><span class="tk">01</span><div><h3>Direct origin access</h3><p>Producer, concession and terminal supply, verified before you commit.</p></div></div>
+  <div class="trust-item"><span class="tk">02</span><div><h3>Specification-grade processing</h3><p>Refined, graded or blended to the buyer’s technical sheet.</p></div></div>
+  <div class="trust-item"><span class="tk">03</span><div><h3>Full chain-of-custody dossier</h3><p>Permits, assays and provenance records on every shipment.</p></div></div>
+  <div class="trust-item"><span class="tk">04</span><div><h3>Secured global logistics</h3><p>Tanker, container and armoured air transport, insured.</p></div></div>
 </div></section>
 
 <section class="section section--white"><div class="container">
@@ -417,6 +436,21 @@ home = f'''
     <div class="card">{icon("eye")}<h3>Verification you control</h3><p>Your appointed independent inspector can sample and test before release. We do not ask you to trust our word alone.</p></div>
     <div class="card">{icon("link")}<h3>Your client stays yours</h3><p>When you subcontract to us, we agree in writing not to approach your end buyer. Confidentiality terms are available before you share details.</p></div>
   </div>
+  <div class="split" style="margin-top:3.5rem;align-items:center">
+    <div>
+      {editorial_picture("global-trade-routes-office", "Executive operations room with a backlit world map of global shipping routes", sizes="(min-width: 900px) 560px, 100vw", caption="Global trade routes: linking origin concessions directly to corporate buyer discharge ports")}
+    </div>
+    <div class="card card-services">
+      <span class="eyebrow">Execution capability</span>
+      <h2>One contractor, four services</h2>
+      <ol class="steps">
+        <li><strong>Source</strong><span>Secure material at origin and confirm it exists.</span></li>
+        <li><strong>Process</strong><span>Refine, sort or blend to the buyer’s specification.</span></li>
+        <li><strong>Document</strong><span>Assemble permits, assays and chain-of-custody records.</span></li>
+        <li><strong>Ship</strong><span>Move it to the agreed port, airport or vault.</span></li>
+      </ol>
+    </div>
+  </div>
 </div></section>
 
 <section class="section"><div class="container">
@@ -424,31 +458,43 @@ home = f'''
     <span class="eyebrow">What we handle</span>
     <h2>Three core commodity areas</h2>
   </div>
-  <div class="grid grid-3">
+  <div class="grid grid-3 divisions">
     <a class="card card--link card--media" href="commodities.html#rare-earths">{card_img("commodity-rare-earths-specimen")}{icon("mineral")}<h3>Rare earths &amp; critical minerals</h3><p>Concentrates and separated oxides for magnets, optics, electronics and alloys.</p><span class="more">View details →</span></a>
     <a class="card card--link card--media" href="commodities.html#crude-oil">{card_img("commodity-crude-oil-refinery")}{icon("oil")}<h3>Crude oil &amp; products</h3><p>Spot and term cargoes, terminal lifting, blending, inspection and tanker coordination.</p><span class="more">View details →</span></a>
     <a class="card card--link card--media" href="commodities.html#gems">{card_img("commodity-gems-display")}{icon("gem")}<h3>Gemstones</h3><p>Rough and cut stones, sorting and cutting, certification and insured transport.</p><span class="more">View details →</span></a>
   </div>
-  <p style="margin-top:1.5rem">Need something else, such as copper, gold doré or platinum group metals? <a href="commodities.html#other">Ask us about other materials.</a></p>
+  <div class="bespoke"><div><span class="eyebrow">Bespoke strategic mandates</span><b>Something else, such as copper, gold doré or platinum group metals?</b><p>Send the specification and we will tell you whether we can execute it.</p></div><a class="btn btn--sm" href="commodities.html#other">Ask about other materials</a></div>
 </div></section>
 
-<section class="section section--tint"><div class="container split">
-  <div>
+<section class="section section--navy" id="workflow"><div class="container">
+  <div class="section-head">
     <span class="eyebrow">How an engagement runs</span>
-    <h2>A clear, documented path</h2>
-    <p>Every mandate follows the same four stages. You can engage us for the full chain or for a single stage.</p>
-    <div style="margin: 1.5rem 0;">
-      {editorial_picture("port-container-terminal", "Deep-sea container terminal handling strategic export cargoes", sizes="(min-width: 900px) 500px, 100vw", caption="From origin extraction to international port delivery")}
-    </div>
-    <a class="btn btn--ghost" href="services.html">Read the full service detail</a>
+    <h2>A clear, documented path from origin to delivery</h2>
+    <p class="lead">Every mandate follows the same four stages. Engage us for the full chain or for a single stage. Select a stage to see how it differs by commodity.</p>
   </div>
-  <div class="card">
-    <ol class="steps">
-      <li><strong>Sourcing and verification of supply</strong><span>Origin allocation, ownership checks and baseline sampling.</span></li>
-      <li><strong>Processing to specification</strong><span>Beneficiation, refining, blending, sorting or cutting.</span></li>
-      <li><strong>Documentation and compliance</strong><span>Permits, assay reports, provenance records, banking documents.</span></li>
-      <li><strong>Logistics and delivery</strong><span>Chartering, containers or secured air transport, with insurance.</span></li>
-    </ol>
+  <div class="wf" data-wf>
+    <div class="wf-tabs" role="tablist" aria-label="Execution stages">
+      <button class="wf-tab" role="tab" id="wf-t1" aria-controls="wf-p1" aria-selected="true"><span class="n">01</span><span class="t">Sourcing</span></button>
+      <button class="wf-tab" role="tab" id="wf-t2" aria-controls="wf-p2" aria-selected="false" tabindex="-1"><span class="n">02</span><span class="t">Processing</span></button>
+      <button class="wf-tab" role="tab" id="wf-t3" aria-controls="wf-p3" aria-selected="false" tabindex="-1"><span class="n">03</span><span class="t">Documentation</span></button>
+      <button class="wf-tab" role="tab" id="wf-t4" aria-controls="wf-p4" aria-selected="false" tabindex="-1"><span class="n">04</span><span class="t">Logistics &amp; delivery</span></button>
+    </div>
+    <div class="wf-panel on" role="tabpanel" id="wf-p1" aria-labelledby="wf-t1">
+      <div><span class="stage-code">Stage 01 / Origin</span><h3>Sourcing and verification of supply</h3><p>Origin allocation, ownership checks and baseline sampling, so the material and the right to sell it are real before you commit.</p><div class="wf-actions"><a class="btn btn--ghost btn--sm" href="services.html">Read the full service detail</a></div></div>
+      <dl class="wf-rows"><div class="wf-row"><dt>Rare earths</dt><dd>Off-take from licensed operations, with baseline sampling at source.</dd></div><div class="wf-row"><dt>Crude oil</dt><dd>Allocation lifting from producers, terminals and tank farms.</dd></div><div class="wf-row"><dt>Gemstones</dt><dd>Rough parcels from licensed producers and tenders, sealed and recorded.</dd></div></dl>
+    </div>
+    <div class="wf-panel" role="tabpanel" id="wf-p2" aria-labelledby="wf-t2">
+      <div><span class="stage-code">Stage 02 / Specification</span><h3>Processing to specification</h3><p>Beneficiation, refining, blending, sorting or cutting to the buyer’s technical requirements before export.</p><div class="wf-actions"><a class="btn btn--ghost btn--sm" href="services.html">Read the full service detail</a></div></div>
+      <dl class="wf-rows"><div class="wf-row"><dt>Rare earths</dt><dd>Crushing, milling, separation and chemical processing through partner plants.</dd></div><div class="wf-row"><dt>Crude oil</dt><dd>Terminal blending, water and sediment treatment, gravity and sulphur alignment.</dd></div><div class="wf-row"><dt>Gemstones</dt><dd>Cleaning, sorting, grading, sawing, cutting and polishing.</dd></div></dl>
+    </div>
+    <div class="wf-panel" role="tabpanel" id="wf-p3" aria-labelledby="wf-t3">
+      <div><span class="stage-code">Stage 03 / Dossier</span><h3>Documentation and compliance</h3><p>Permits, assay reports, provenance records and banking documents, assembled so cargo can be cleared and financed.</p><div class="wf-actions"><a class="btn btn--ghost btn--sm" href="compliance.html">See the document set</a></div></div>
+      <dl class="wf-rows"><div class="wf-row"><dt>Origin &amp; permits</dt><dd>Certificates of origin, export licences, royalty and tax clearance.</dd></div><div class="wf-row"><dt>Inspection</dt><dd>Assay, quality and quantity reports from the surveyor you appoint.</dd></div><div class="wf-row"><dt>Provenance &amp; banking</dt><dd>Chain-of-custody records, invoices, packing lists and bills of lading.</dd></div></dl>
+    </div>
+    <div class="wf-panel" role="tabpanel" id="wf-p4" aria-labelledby="wf-t4">
+      <div><span class="stage-code">Stage 04 / Delivery</span><h3>Logistics and delivery</h3><p>Chartering, containers or secured air transport, with insurance, and the chain of custody kept intact until handover.</p><div class="wf-actions"><a class="btn btn--ghost btn--sm" href="services.html">Read the full service detail</a></div></div>
+      <dl class="wf-rows"><div class="wf-row"><dt>Crude oil</dt><dd>Vessel chartering support, ship-to-ship coordination and discharge management.</dd></div><div class="wf-row"><dt>Rare earths &amp; bulk</dt><dd>Sealed drums and bulk bags in containers, with hazardous-goods clearance where needed.</dd></div><div class="wf-row"><dt>Gemstones</dt><dd>Courier or vault-to-vault secured air transport, with insurance.</dd></div></dl>
+    </div>
   </div>
 </div></section>
 
@@ -486,11 +532,11 @@ about = page_head("About", "A contractor for the physical side of the deal",
       <p class="lead">Many deals pass through three layers. We sit in the last one, and we do not go around the layers above us.</p>
     </div>
     <div class="flow">
-      <div class="flow-node"><span class="flow-label">Layer 1</span><h3>End buyer</h3><p>A manufacturer, refinery, government institution or other organisation that needs the material.</p></div>
+      <div class="flow-node"><span class="flow-label">Tier 1</span><h3>End buyer</h3><p>A manufacturer, refinery, government institution or other organisation that needs the material.</p></div>
       <div class="flow-arrow" aria-hidden="true">↓ gives a purchasing mandate</div>
-      <div class="flow-node"><span class="flow-label">Layer 2</span><h3>Procurement firm or trading house</h3><p>Holds the buyer relationship and the commercial terms. Needs someone to execute on the ground.</p></div>
+      <div class="flow-node"><span class="flow-label">Tier 2</span><h3>Procurement firm or trading house</h3><p>Holds the buyer relationship and the commercial terms. Needs someone to execute on the ground.</p></div>
       <div class="flow-arrow" aria-hidden="true">↓ subcontracts physical execution</div>
-      <div class="flow-node flow-node--us"><span class="flow-label">Layer 3</span><h3>{SITE["name"]}</h3><p>Sources, processes, documents and ships. Bound by a written non-circumvention and confidentiality agreement.</p></div>
+      <div class="flow-node flow-node--us"><span class="flow-label">Tier 3</span><h3>{SITE["name"]}</h3><p>Sources, processes, documents and ships. Bound by a written non-circumvention and confidentiality agreement.</p></div>
     </div>
   </div>
   <div style="align-self: center;">
@@ -534,7 +580,7 @@ service(1, "source", "Sourcing and verification of supply",
      ("Gemstones", "Rough parcels from licensed producers and tenders, sealed and recorded.")],
     "Start with sourcing", "contact.html",
     img_name="sourcing-gemstone-tender",
-    img_alt="Origin allocation and tender parcel documentation for mineral and gem contracts",
+    img_alt="Secure gemstone tender room with sealed parcels, precision balance and bonded vault door",
     img_caption="Stage 1: Concession title verification, origin allocation and parcel inspection") + \
 service(2, "process", "Processing to specification",
     "Raw material is prepared to the buyer’s technical requirements before export, to improve purity, grade compliance and transport efficiency.",
@@ -569,7 +615,7 @@ def commodity(id_, ic, title, intro, tags, rows, img_name=None, img_alt="", img_
     tag_html = "".join(f'<span class="tag">{t}</span>' for t in tags)
     facts = "".join(f"<div><dt>{k}</dt><dd>{v}</dd></div>" for k, v in rows)
     img_html = editorial_picture(img_name, img_alt, sizes="(min-width: 900px) 460px, 100vw", caption=img_caption) if img_name else ""
-    return f'''<section id="{id_}" class="commodity">
+    return f'''<section id="{id_}" class="commodity reveal" data-division="{id_}">
   <div class="commodity-head">{icon(ic)}<div><h2>{title}</h2><p>{intro}</p></div></div>
   <div class="commodity-grid">
     <div>
@@ -592,6 +638,14 @@ title_param = {
 
 commodities = page_head("Commodities", "What we handle",
     "Specifications and verification steps for each commodity area. Technical parameters are agreed per contract.") + f'''
+<div class="filter-bar"><div class="container"><div class="filter-row" role="group" aria-label="Filter by division">
+  <button type="button" class="filter-btn" data-filter="all" aria-pressed="true">All divisions</button>
+  <button type="button" class="filter-btn" data-filter="rare-earths" aria-pressed="false">Rare earths &amp; critical minerals</button>
+  <button type="button" class="filter-btn" data-filter="crude-oil" aria-pressed="false">Crude oil &amp; energy</button>
+  <button type="button" class="filter-btn" data-filter="gems" aria-pressed="false">Gemstones</button>
+  <button type="button" class="filter-btn" data-filter="other" aria-pressed="false">Bespoke / other</button>
+  <span class="filter-count" id="filter-count" aria-live="polite"></span>
+</div></div></div>
 <div class="subnav"><div class="container"><ul>
   <li><a href="#rare-earths">Rare earths</a></li><li><a href="#crude-oil">Crude oil</a></li>
   <li><a href="#gems">Gemstones</a></li><li><a href="#other">Other materials</a></li></ul></div></div>
@@ -606,7 +660,7 @@ commodities = page_head("Commodities", "What we handle",
      ("Provenance", "OECD due diligence approach to responsible mineral supply chains"),
      ("Note", "Radioactive material classes and export controls apply to some concentrates. We check these before quoting.")],
     img_name="commodity-rare-earths-specimen",
-    img_alt="Rare earth elements specimen under precision laboratory lighting",
+    img_alt="Rare earth oxide samples in laboratory vials beside ore specimens",
     img_caption="Separated oxides and mineral concentrates verified by buyer-appointed ICP-MS assay") + \
 commodity("crude-oil", "oil", "Crude oil &amp; petroleum products",
     "Spot and term physical supply for refiners and traders, with terminal lifting, inspection and vessel coordination.",
@@ -680,7 +734,7 @@ compliance = page_head("Compliance", "Documentation, verification and how we sta
     <h2>Inspection access</h2>
     <p>Buyers and their appointed surveyors are welcome at each stage.</p>
     <div style="margin-top:1.5rem">
-      {editorial_picture("inspection-geological-assay", "Geological surveyor conducting on-site mineral assay and grade inspection", sizes="(min-width: 900px) 460px, 100vw", caption="Independent surveyor access at origin, loading port and destination discharge")}
+      {editorial_picture("inspection-geological-assay", "Independent surveyor inspecting an ore sample at a field assay table", sizes="(min-width: 900px) 460px, 100vw", caption="Independent surveyor access at origin, loading port and destination discharge")}
     </div>
   </div>
   <div class="card" style="align-self:center">

@@ -28,6 +28,89 @@ var DC_CONFIG = window.DC_CONFIG || { formEndpoint: "", enquiryEmail: "enquiries
     });
   }
 
+  /* ---------- Header scroll state ---------- */
+  var header = document.querySelector(".site-header");
+  if (header) {
+    var onScroll = function () { header.classList.toggle("scrolled", window.scrollY > 8); };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  }
+
+  /* ---------- Scroll reveal ---------- */
+  var revealSel = ".section-head, .card, .flow-node, .trust-item, .media-frame, .bespoke, .wf, .facts, details.doc, .cta-inner, .commodity";
+  var targets = document.querySelectorAll(revealSel);
+  Array.prototype.forEach.call(targets, function (el, i) {
+    if (el.closest(".hero")) return;
+    el.classList.add("reveal");
+    if (!el.style.getPropertyValue("--d")) el.style.setProperty("--d", ((i % 4) * 0.08) + "s");
+  });
+  var revealEls = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+    Array.prototype.forEach.call(revealEls, function (el) { io.observe(el); });
+  } else {
+    Array.prototype.forEach.call(revealEls, function (el) { el.classList.add("in"); });
+  }
+
+  /* ---------- 4-stage workflow explorer ---------- */
+  var wf = document.querySelector("[data-wf]");
+  if (wf) {
+    var tabs = Array.prototype.slice.call(wf.querySelectorAll('[role="tab"]'));
+    var panels = Array.prototype.slice.call(wf.querySelectorAll('[role="tabpanel"]'));
+    var select = function (idx, focus) {
+      tabs.forEach(function (t, i) {
+        var on = i === idx;
+        t.setAttribute("aria-selected", String(on));
+        t.tabIndex = on ? 0 : -1;
+        t.classList.toggle("done", i < idx);
+        panels[i].classList.toggle("on", on);
+      });
+      if (focus) tabs[idx].focus();
+    };
+    tabs.forEach(function (t, i) {
+      t.addEventListener("click", function () { select(i); });
+      t.addEventListener("keydown", function (e) {
+        var n = tabs.length;
+        if (e.key === "ArrowRight") { e.preventDefault(); select((i + 1) % n, true); }
+        else if (e.key === "ArrowLeft") { e.preventDefault(); select((i - 1 + n) % n, true); }
+        else if (e.key === "Home") { e.preventDefault(); select(0, true); }
+        else if (e.key === "End") { e.preventDefault(); select(n - 1, true); }
+      });
+    });
+  }
+
+  /* ---------- Commodity division filter ---------- */
+  var filterBtns = document.querySelectorAll(".filter-btn");
+  if (filterBtns.length) {
+    var cards = document.querySelectorAll(".commodity[data-division]");
+    var count = document.getElementById("filter-count");
+    var apply = function (key) {
+      var shown = 0;
+      Array.prototype.forEach.call(cards, function (c) {
+        var match = key === "all" || c.getAttribute("data-division") === key;
+        c.hidden = !match;
+        if (match) {
+          shown++;
+          c.classList.remove("in"); void c.offsetWidth; c.classList.add("in");
+        }
+      });
+      Array.prototype.forEach.call(filterBtns, function (b) {
+        b.setAttribute("aria-pressed", String(b.getAttribute("data-filter") === key));
+      });
+      if (count) count.textContent = shown + " / " + cards.length + " divisions";
+    };
+    Array.prototype.forEach.call(filterBtns, function (b) {
+      b.addEventListener("click", function () { apply(b.getAttribute("data-filter")); });
+    });
+    var hash = (window.location.hash || "").replace("#", "");
+    var valid = Array.prototype.some.call(cards, function (c) { return c.getAttribute("data-division") === hash; });
+    apply(valid ? hash : "all");
+  }
+
   /* ---------- Enquiry form ---------- */
   var form = document.getElementById("enquiry-form");
   if (!form) return;
